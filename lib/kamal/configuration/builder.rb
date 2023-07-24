@@ -35,6 +35,10 @@ class Kamal::Configuration::Builder
     !!builder_config["cache"]
   end
 
+  def depot?
+    !!depot_options
+  end
+
   def args
     builder_config["args"] || {}
   end
@@ -69,6 +73,10 @@ class Kamal::Configuration::Builder
 
   def remote_host
     builder_config["remote"]["host"] if remote?
+  end
+
+  def depot_options
+    builder_config["depot"]
   end
 
   def cache_from

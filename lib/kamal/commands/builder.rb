@@ -11,7 +11,9 @@ class Kamal::Commands::Builder < Kamal::Commands::Base
   end
 
   def target
-    if config.builder.multiarch?
+    if config.builder.depot?
+      depot
+    elsif config.builder.multiarch?
       if config.builder.remote?
         if config.builder.local?
           multiarch_remote
@@ -28,6 +30,10 @@ class Kamal::Commands::Builder < Kamal::Commands::Base
         native
       end
     end
+  end
+
+  def depot
+    @depot ||= Kamal::Commands::Builder::Depot.new(config)
   end
 
   def native

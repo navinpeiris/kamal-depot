@@ -12,6 +12,14 @@
 #
 # Options go under the builder key in the root configuration.
 builder:
+  # Depot
+  #
+  # Enable builds through [depot.dev](https://depot.dev), defaults to `false`.
+  # See [README](https://github.com/navinpeiris/kamal-depot/blob/main/README.md#building-with-depot-builders) for more information.
+  depot:
+    platforms:
+      - linux/amd64
+      - linux/arm64
 
   # Multiarch
   #
@@ -99,7 +107,6 @@ builder:
   #   bundle install && \
   #   rm -rf /usr/local/bundle/cache
   # ```
-
 
   # SSH
   #
