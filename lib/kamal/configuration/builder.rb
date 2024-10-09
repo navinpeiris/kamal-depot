@@ -45,6 +45,10 @@ class Kamal::Configuration::Builder
     end
   end
 
+  def depot?
+    builder_config["depot"] == true
+  end
+
   def remote?
     remote_arches.any?
   end
