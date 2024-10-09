@@ -8,6 +8,12 @@
 #
 # Options go under the builder key in the root configuration.
 builder:
+  # Use depot.dev for builds
+  #
+  # If true, Kamal will use depot.dev for builds.
+  #
+  # Defaults to false:
+  depot: false
 
   # Arch
   #
