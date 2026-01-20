@@ -1,7 +1,6 @@
 class Kamal::Commands::Builder::Depot < Kamal::Commands::Builder::Base
   def push(export_action = "registry", tag_as_dirty: false, no_cache: false)
     depot :build,
-      "--push",
       "--output=type=#{export_action}",
       *platform_options(arches),
       *build_tag_options(tag_as_dirty: tag_as_dirty),
